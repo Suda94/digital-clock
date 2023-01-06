@@ -13,3 +13,13 @@
   --main-bg-color: #fff;
   --main-text-color: #888888;
 }
+
+[data-theme="dark"] {
+  --main-bg-color: #1e1f26;
+  --main-text-color: #ccc;
+}
+
+* {
+  box-sizing: border-box;
+  /* transition:all ease0.2s; */
+}
