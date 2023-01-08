@@ -32,10 +32,60 @@ showTime();
 
 
 // Analog Clock function:
+// const deg = 6;
+// const hours = document.querySelector(".hour");
+// const mins = document.querySelector("min");
+// const secs = document.querySelector(".sec");
+
+// const setClock = () => {
+//     let day = new Date();
+//     let hh = day.getHours() * 30;
+//     let mm = day.getMinutes() * deg;
+//     let ss = day.getSeconds() * deg;
+
+//     hours.style.transform = `rotateZ(${hh + mm / 12}deg)`;
+//     mins.style.transform = `rotateZ(${mm}deg)`;
+//     secs.style.transform = `rotateZ(${ss}deg)`;
+// };
+
+// //first time:
+// setClock();
+
+// //update every 1000ms
+// setInterval(setClock, 1000);
+
+
+// const themeSwitch = (evt) => {
+//     const switchBtn = evt.target;
+//     if (switchBtn.textContent.toLowerCase() === "light") {
+//         switchBtn.textContent = "dark";
+//         //localStorage.setItem("theme", "dark");
+
+//         document.documentElement.setAttribute("data-theme", "dark");
+//     } else {
+//         switchBtn.textContent = "light";
+//         //localStorage.setItem("theme", "light");//add this
+
+//         document.documentElement.setAttribute("data-theme", "light");
+//     }
+// };
+
+// const switchModeBtn =
+//     document.querySelector(".switch-btn");
+// switchModeBtn.addEventListener("click",themeSwitch, false);
+
+// let currentTheme = "dark";
+// //currentTheme = localStorage.getItem("theme")? localStorage.getItem("theme")
+// // :null;
+
+// if (currentTheme) {
+//     document.documentElement.setAttribute("data-theme", currentTheme);
+//     switchModeBtn.textContent = currentTheme;
+// }
 const deg = 6;
-const hours = document.querySelector(".hour");
-const mins = document.querySelector("min");
-const secs = document.querySelector(".sec");
+const hour = document.querySelector(".hour");
+const min = document.querySelector(".min");
+const sec = document.querySelector(".sec");
 
 const setClock = () => {
     let day = new Date();
@@ -43,38 +93,36 @@ const setClock = () => {
     let mm = day.getMinutes() * deg;
     let ss = day.getSeconds() * deg;
 
-    hours.style.transform = `rotateZ(${hh + mm / 12}deg)`;
-    mins.style.transform = `rotateZ(${mm}deg)`;
-    secs.style.transform = `rotateZ(${ss}deg)`;
+    hour.style.transform = `rotateZ(${hh + mm / 12}deg)`;
+    min.style.transform = `rotateZ(${mm}deg)`;
+    sec.style.transform = `rotateZ(${ss}deg)`;
 };
 
-//first time:
+// first time
 setClock();
-
-//update every 1000ms
+// Update every 1000 ms
 setInterval(setClock, 1000);
 
-
-const themeSwitch = (evt) => {
+const switchTheme = (evt) => {
     const switchBtn = evt.target;
     if (switchBtn.textContent.toLowerCase() === "light") {
         switchBtn.textContent = "dark";
-        //localStorage.setItem("theme", "dark");
-
+        // localStorage.setItem("theme", "dark");
         document.documentElement.setAttribute("data-theme", "dark");
     } else {
         switchBtn.textContent = "light";
-        //localStorage.setItem("theme", "light");//add this
-
+        // localStorage.setItem("theme", "light"); //add this
         document.documentElement.setAttribute("data-theme", "light");
     }
 };
 
-const switchModeBtn =
-    document.querySelector(".switch-btn");
+const switchModeBtn = document.querySelector(".switch-btn");
 switchModeBtn.addEventListener("click", switchTheme, false);
 
 let currentTheme = "dark";
+// currentTheme = localStorage.getItem("theme")
+// 	? localStorage.getItem("theme")
+// 	: null;
 
 if (currentTheme) {
     document.documentElement.setAttribute("data-theme", currentTheme);
