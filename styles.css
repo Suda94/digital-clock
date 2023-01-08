@@ -1,7 +1,9 @@
 .clock {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  position: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
   transform: translateX(-50%) translateY(-50%);
   color: #17d4fe;
   font-size: 60px;
@@ -54,4 +56,73 @@ body {
   transition: all ease 0.2s;
 }
 .time:before {
+  content: "";
+  height: 0.75rem;
+  width: 0.75rem;
+  background-color: var(--main-text-color);
+  border: 2pc solid var(--main-bg-color);
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1000;
+  transition: all ease 0.2s;
+}
+.hour,
+.min,
+.sec {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+}
+.hour {
+  height: 10em;
+  width: 10em;
+}
+.hour::before {
+  content: "";
+  position: absolute;
+  height: 50%;
+  width: 6px;
+  background-color: var(--main-text-color);
+  border-radius: 6px;
+}
+.min {
+  height: 12em;
+  width: 12em;
+}
+.min::before {
+  content: "";
+  height: 50%;
+  width: 4px;
+  background-color: var(--main-text-color);
+  border-radius: 4px;
+}
+.sec {
+  height: 10em;
+  width: 10em;
+}
+.sec::before {
+  content: "";
+  height: 60%;
+  width: 2px;
+  background-color: #f00;
+  border-radius: 2px;
+}
+/* style for theme switch btn */
+.switch-cont {
+  margin: 2em auto;
+  /*position:absolute; */
+  bottom: 0;
+}
+.switch-cont .switch-btn {
+  font-family: monospace;
+  text-transform: uppercase;
+  outline: none;
+  padding: 0.5rem 1rem;
+  background-color: var(--main-bg-color);
+  columns: var(--main-text-color);
+  border: 1px solid var(--main-text-color);
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all ease 0.3s;
 }
