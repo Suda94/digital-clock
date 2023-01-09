@@ -1,6 +1,6 @@
 .clock {
-  position: flex;
-  margin-left: auto;
+  position: relative;
+  margin-left: 50%;
   margin-right: auto;
   margin-top: auto;
   margin-bottom: auto;
@@ -114,13 +114,15 @@ body {
   /*position:absolute; */
   bottom: 0;
 }
-.switch-cont .switch-btn {
+.switch-cont .switch-btn,
+.page-header {
   font-family: monospace;
   text-transform: uppercase;
   outline: none;
   padding: 0.5rem 1rem;
-  background-color: var(--main-bg-color);
+  background-color: var(--main-text-color);
   columns: var(--main-text-color);
+
   border: 1px solid var(--main-text-color);
   border-radius: 0.25rem;
   cursor: pointer;
